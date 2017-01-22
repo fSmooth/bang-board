@@ -1,4 +1,4 @@
-package com.fsmooth.bangboard;
+package fragments;
 
 /**
  * Created by fonsi on 22/01/17.
