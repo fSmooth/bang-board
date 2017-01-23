@@ -1,6 +1,6 @@
 package fragments;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,10 +20,10 @@ public class Description extends Fragment {
     }
 
     public void showDescription(String texto) {
-        TextView txtDetalle =
+        TextView txtDescription =
                 (TextView)getView().findViewById(R.id.txtDescription);
 
-        txtDetalle.setText(texto);
+        txtDescription.setText(texto);
     }
 
 }

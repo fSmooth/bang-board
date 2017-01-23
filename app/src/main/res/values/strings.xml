@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bang! Board</string>
 
@@ -7,12 +8,6 @@
         <item>Calamity Janet</item>
         <item>El Gringo</item>
     </string-array>
-    <integer-array name="charactersLifes">
-        <item>4</item>
-        <item>4</item>
-        <item>4</item>
-        <item>3</item>
-    </integer-array>
     <string-array name="charactersDescriptions">
         <item>Cada vez que pierde una vida coge una carta del mazo.</item>
         <item>Cuando empiece su turno mira la segunda carta que robe:
