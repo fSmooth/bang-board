@@ -1,19 +1,28 @@
 package com.fsmooth.bangboard;
 
+
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TabHost;
 
-public class MainActivity extends AppCompatActivity {
+import fragments.Character;
+import fragments.CharacterList;
+import fragments.Description;
+
+public class MainActivity extends AppCompatActivity
+                            implements CharacterList.CharacterListener{
 
     TabHost tabs;
     TabHost.TabSpec spec;
+    CharacterList frgCharacterList;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // tabs
         tabs = (TabHost) findViewById(android.R.id.tabhost);
         tabs.setup();
 
@@ -32,5 +41,33 @@ public class MainActivity extends AppCompatActivity {
         tabs.setCurrentTab(0);
 
 
+        // fragments
+        frgCharacterList = (CharacterList) getSupportFragmentManager()
+                .findFragmentById(R.id.frgCharacterList);
+
+        frgCharacterList.setCharacterListener(this);
+
+
+
+    }
+
+    @Override
+    public void onCharacterSeleccionado(Character c) {
+        System.out.println("Entro");
+        boolean hayDescription =
+                (getSupportFragmentManager().findFragmentById(R.id.frgDescription) != null);
+
+        if(hayDescription) {
+            System.out.println("descripcion");
+            ((Description)getSupportFragmentManager()
+                    .findFragmentById(R.id.frgDescription)).showDescription(c.getDescription());
+
+        }
+        else {
+            System.out.println("no hay descripcion");
+            Intent i = new Intent(this, DescriptionActivity.class);
+            i.putExtra("description", c.getDescription());
+            startActivity(i);
+        }
     }
 }

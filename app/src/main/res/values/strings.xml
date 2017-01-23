@@ -1,3 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bang! Board</string>
+
+    <string-array name="charactersNames">
+        <item>Bart Cassidy</item>
+        <item>Black Jack</item>
+        <item>Calamity Janet</item>
+        <item>El Gringo</item>
+    </string-array>
+    <string-array name="charactersDescriptions">
+        <item>Cada vez que pierde una vida coge una carta del mazo.</item>
+        <item>Cuando empiece su turno mira la segunda carta que robe:
+                si es de diamantes o corazones roba una carta adicional.</item>
+        <item>Puede usar cartas de BANG! como Fallaste! y viceversa.</item>
+        <item>Cuado es dañado por otro jugador le roba una carta.</item>
+    </string-array>
 </resources>
