@@ -15,4 +15,10 @@
         <item>Puede usar cartas de BANG! como Fallaste! y viceversa.</item>
         <item>Cuado es dañado por otro jugador le roba una carta.</item>
     </string-array>
+
+    <string name="butAdd">Añadir</string>
+    <string name="dialog_tittle">Importante</string>
+    <string name="dialog_message">¿Eliminar este objeto?</string>
+    <string name="dialog_positive_button">Si</string>
+    <string name="dialog_negative_button">No</string>
 </resources>
