@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fragments.Description">
+    tools:context="fragments.Description"
+    android:background="@android:color/darker_gray">
 
     <TextView
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/darker_gray"
-        android:textSize="50dp"/>
+        android:textSize="40dp"/>
 
 
 </LinearLayout>

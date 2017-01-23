@@ -53,20 +53,20 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onCharacterSeleccionado(Character c) {
-        System.out.println("Entro");
+
         boolean hayDescription =
                 (getSupportFragmentManager().findFragmentById(R.id.frgDescription) != null);
 
         if(hayDescription) {
-            System.out.println("descripcion");
             ((Description)getSupportFragmentManager()
                     .findFragmentById(R.id.frgDescription)).showDescription(c.getDescription());
 
         }
         else {
-            System.out.println("no hay descripcion");
             Intent i = new Intent(this, DescriptionActivity.class);
-            i.putExtra("description", c.getDescription());
+            Bundle bundle = new Bundle();
+            bundle.putString("description", c.getDescription());
+            i.putExtras(bundle);
             startActivity(i);
         }
     }
