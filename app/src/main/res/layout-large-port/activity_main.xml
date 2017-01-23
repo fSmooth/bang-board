@@ -54,10 +54,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
 
-                    <TextView android:id="@+id/textView2"
-                        android:text="Contenido Tab 2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                    <fragment
+                        class="fragments.Equipment"
+                        android:id="@+id/frgEquipment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:layout="@layout/fragment_equipment" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
