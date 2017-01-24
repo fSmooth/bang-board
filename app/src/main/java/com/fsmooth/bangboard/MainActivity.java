@@ -4,7 +4,10 @@ package com.fsmooth.bangboard;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import fragments.Character;
 import fragments.CharacterList;
@@ -69,5 +72,17 @@ public class MainActivity extends AppCompatActivity
             i.putExtras(bundle);
             startActivity(i);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, "v1.0", Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
     }
 }
