@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bang! Board</string>
+    <string name="dialog_message">Delete this object?</string>
+    <string name="dialog_positive_button">Yes</string>
+    <string name="dialog_negative_button">No</string>
+    <string name="dialog_tittle">Important</string>
+    <string name="butAdd">Add</string>
+
+    <string-array name="charactersDescriptions">
+        <item>Each time he loses a life point, he immediately draws a card from
+                                        the deck.</item>
+        <item>During the phase 1 of his turn, he must show the second card he draws:
+            if it\'s Heart or Diamonds (just like a "draw!"),
+            he draws one additional card (without revealing it).</item>
+        <item>She can use BANG! cards as Missed! cards and vice versa. If she plays a Missed! card as a BANG!,
+            she cannot play another BANG! card that turn (unless she has a Volcanic in play).</item>
+        <item>Each time he loses a life point due to a card played by another player,
+            he draws a random card from the hands of that player (one card for each life point).</item>
+    </string-array>
+</resources>

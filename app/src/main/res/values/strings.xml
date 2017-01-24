@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bang! Board</string>
+    <string name="app_name" translatable="false">Bang! Board</string>
 
     <string-array name="charactersNames">
         <item>Bart Cassidy</item>
@@ -22,5 +22,5 @@
     <string name="dialog_positive_button">Si</string>
     <string name="dialog_negative_button">No</string>
 
-    <string name="action_info">Info.</string>
+    <string name="action_info" translatable="false">Info.</string>
 </resources>
