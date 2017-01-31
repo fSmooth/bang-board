@@ -2,27 +2,28 @@ package com.fsmooth.bangboard;
 
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.Toast;
 
-import fragments.Character;
 import fragments.CharacterList;
 import fragments.Description;
 
 public class MainActivity extends AppCompatActivity
-                            implements CharacterList.CharacterListener{
+        implements CharacterList.CharacterListener {
 
     TabHost tabs;
     TabHost.TabSpec spec;
     CharacterList frgCharacterList;
+    String description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         // tabs
@@ -51,27 +52,37 @@ public class MainActivity extends AppCompatActivity
         frgCharacterList.setCharacterListener(this);
 
 
-
     }
 
     @Override
     public void onCharacterSeleccionado(Character c) {
+        description = c.getDescription();
 
-        boolean hayDescription =
-                (getSupportFragmentManager().findFragmentById(R.id.frgDescription) != null);
-
-        if(hayDescription) {
-            ((Description)getSupportFragmentManager()
+        if (hasDescription()) {
+            ((Description) getSupportFragmentManager()
                     .findFragmentById(R.id.frgDescription)).showDescription(c.getDescription());
 
-        }
-        else {
+        } else {
             Intent i = new Intent(this, DescriptionActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("description", c.getDescription());
             i.putExtras(bundle);
             startActivity(i);
         }
+    }
+
+    /**
+     * Método que comprueba si el layou actual contiene un fragment de descripción.
+     *
+     * @return boolean
+     */
+    private boolean hasDescription() {
+        boolean has = false;
+
+        if (getSupportFragmentManager().findFragmentById(R.id.frgDescription) != null)
+            has = true;
+
+        return has;
     }
 
     @Override
@@ -84,5 +95,27 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         Toast.makeText(this, "v1.0", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("description", description);
+        super.onSaveInstanceState(outState);
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        description = savedInstanceState.getString("description");
+
+        if (hasDescription()) {
+            ((Description) getSupportFragmentManager()
+                    .findFragmentById(R.id.frgDescription)).showDescription(savedInstanceState.getString("description"));
+
+        }
+
     }
 }
