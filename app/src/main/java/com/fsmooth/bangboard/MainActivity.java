@@ -4,6 +4,7 @@ package com.fsmooth.bangboard;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity
     TabHost tabs;
     TabHost.TabSpec spec;
     CharacterList frgCharacterList;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class MainActivity extends AppCompatActivity
                 .findFragmentById(R.id.frgCharacterList);
 
         frgCharacterList.setCharacterListener(this);
+
+        // toolbar
+        toolbar = (Toolbar) findViewById(R.id.appbar);
+        setSupportActionBar(toolbar);
 
 
 
