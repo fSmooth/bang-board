@@ -39,11 +39,18 @@ public class Equipment extends Fragment implements View.OnClickListener, Adapter
         super.onActivityCreated(savedInstanceState);
 
 
+
+
         editText = (EditText) getView().findViewById(R.id.edTxtElement);
         butAdd = (Button) getView().findViewById(R.id.butAdd);
         listEquip = (ListView) getView().findViewById(R.id.listElements);
 
-        arrayListEquip = new ArrayList<>();
+        // persistencia de la lista
+        if(savedInstanceState != null)
+            arrayListEquip = savedInstanceState.getStringArrayList("equipment");
+        else
+            arrayListEquip = new ArrayList<>();
+
         adapter_list = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_list_item_1,
                 arrayListEquip);
@@ -98,5 +105,13 @@ public class Equipment extends Fragment implements View.OnClickListener, Adapter
 
         return false;
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putStringArrayList("equipment", arrayListEquip);
+
+        super.onSaveInstanceState(outState);
+    }
+
 
 }

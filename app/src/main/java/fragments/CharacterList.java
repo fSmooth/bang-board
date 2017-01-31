@@ -2,7 +2,6 @@ package fragments;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.fsmooth.bangboard.Character;
 import com.fsmooth.bangboard.R;
 
 import java.lang.*;
