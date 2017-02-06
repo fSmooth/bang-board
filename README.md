@@ -1,3 +1,3 @@
 # Bang! Board
 
-A simply app to manage your Bang! game.
+A simple app to manage your Bang! game.
